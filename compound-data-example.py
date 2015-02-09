@@ -5,7 +5,6 @@ print tuple_one,
 print type(tuple_one)
 print "two" in tuple_one
 
-
 tuple_two = (tuple_one, "four")
 print tuple_two
 
