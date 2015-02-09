@@ -16,11 +16,15 @@ print "first element of first name: " + first_name[0]
 
 print "second element of last name: " + last_name[1]
 
+print "last element of first name: " + first_name[-1]
+
+print "second last elment of last name: " + last_name[-2]
+
 print "first three elment of full_name: " + full_name[:3]
 
 print "second to sixth elements of full_name: " + full_name[1:6]
 
-print "all the full_name one by one: ",  # add ',' to not change row
+print "all the elements of full_name one by one: ",  # add ',' to not change row
 for i in full_name:
     print i,
 
