@@ -27,7 +27,6 @@ print "second to sixth elements of full_name: " + full_name[1:6]
 print "all the elements of full_name one by one: ",  # add ',' to not change row
 for i in full_name:
     print i,
-
 print
 
 print "mutiply first name: " + first_name * 3
