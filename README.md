@@ -1,13 +1,16 @@
 # python-study
 
-#### scalar in Python
+##### scalar in Python
 - int
 - float
 - bool
 
-#### Operation of String in python
+##### Operation of String in python
+- sub string
+- loop of string
+- multiply of string
 
-#### compound data types of Python
+##### compound data types of Python
 - tuple
 - list
 - dict
