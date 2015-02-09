@@ -29,3 +29,7 @@ for i in full_name:
     print i,
 
 print
+
+print "mutiply first name: " + first_name * 3
+
+print "mutiply last name: " + 5 * last_name
