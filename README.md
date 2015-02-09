@@ -1,4 +1,15 @@
 # python-study
-basic and useful things of python to me
 
-#### Begin Sunday, Feb 01, 2015
+#### scalar in Python
+- int
+- float
+- bool
+
+#### Operation of String in python
+
+#### compound data types of Python
+- tuple
+- list
+- dict
+
+##### Begin Sunday, Feb 01, 2015
