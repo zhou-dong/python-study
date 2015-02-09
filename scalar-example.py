@@ -1,58 +1,40 @@
 # three scalars in python, int float, boolean
 
-one = 1
-print one,
-print type(one)
+def print_object_and_type(object):
+    print object,
+    print type(object)
+    print
 
-one_point_five = 1.5
-print one_point_five,
-print type(one_point_five)
+print_object_and_type(1)
 
-true = True
-print true,
-print type(true)
+print_object_and_type(1.5)
 
-false = False
-print false,
-print type(false)
+print_object_and_type(True)
 
-a = 10/2
-print a,
-print type(a)
+print_object_and_type(False)
 
-b = 10/2.0
-print b,
-print type(b)
+print_object_and_type(1 + 1)
 
-c = 1 + 1
-print c,
-print type(c)
+print_object_and_type(1 + 1.0)
 
-d = 1 + 1.0
-print d,
-print type(d)
+print_object_and_type(10/2)
 
-e = 2 ** 2
-print e,
-print type(e)
+print_object_and_type(10/2.0)
 
-f = 3 ** 3
-print f,
-print type(f)
+print_object_and_type(2 ** 2)
+
+print_object_and_type(3 ** 3)
+
+print_object_and_type(4.0 ** 2)
 
 g = 1
-print g,
-print type(g),
+print_object_and_type(g)
 g = float(g)
-print g,
-print type(g)
+print_object_and_type(g)
 
 h = "1"
-print h,
-print type(h),
+print_object_and_type(h)
 h = int(h)
-print h,
-print type(h),
+print_object_and_type(h)
 h = float(h)
-print h,
-print type(h)
+print_object_and_type(h)
