@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*- 
-import os, sys, json, pymongo,logging
+import os, sys, json, pymongo, logging
 from pymongo import MongoClient
 
 def get_files_path_from_dir(dir_path):
@@ -18,9 +18,6 @@ def load_json_file(file_path):
         print "it is not json file: " + file_path
 
 def insert_into_mongo(dir_path):
-    if os.path.exists(dir_path) == False:
-        print dir_path + "is not exists"
-        return 
     for file_path in get_files_path_from_dir(dir_path):
         json_object = load_json_file(file_path)
         if json_object == None:
@@ -41,5 +38,4 @@ collection = db['employee']
 
 insert_into_mongo(dir_path)
 
-# url = "/Users/dongdong/Downloads/1339943811/a-2.json"
-# dir_path = "/Users/dongdong/Downloads/1339943811"
+# file_path = "/Users/dongdong/Downloads/1339943811/a-2.json"
