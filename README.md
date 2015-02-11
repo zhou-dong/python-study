@@ -17,7 +17,7 @@
 
 ---
 
-#### insert into mongo from disk
+#### Insert into mongo from disk
 
 1. waiting input the dirname
 2. scan all the files in the dir
