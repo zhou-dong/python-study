@@ -28,6 +28,7 @@
 ---
 
 Tips:
+
 1. Colon(:) means will have a `code block`, until indent end
   ```python
     def getHello():
@@ -35,13 +36,10 @@ Tips:
     print getHello(), "world"
   ```
 2. In function, if there is no "return" keyword, function will return None
-  
   ```python
   def helloWorld():
     print "Hello world!"
   print helloWorld()
   ```
-
-
 
 ##### Start at Sunday, Feb 01, 2015
