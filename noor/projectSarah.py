@@ -14,9 +14,13 @@ def loadData(fileName):
         data = text_file.read()
     return data.splitlines()
 
-keywords = loadData("vocabulary.txt")
+print "begin to read data"
+
+# keywords = loadData("vocabulary.txt")
 trainData = loadData("train.data.txt")
-trainLabel = loadData("train.label.txt")
+# trainLabel = loadData("train.label.txt")
+
+print "finish read data"
 
 # findStopWord:
 def getStopwords():
@@ -26,7 +30,7 @@ def getStopwords():
             result[x] = keywords[x]
     return result
 
-stopWords = getStopwords()
+# stopWords = getStopwords()
 
 # new list without stopwords
 def cleanKeywords():
@@ -51,7 +55,7 @@ def cleanTraingData():
         result.append(data)
     return result
 
-cleanedTrainData = cleanTraingData()
+# cleanedTrainData = cleanTraingData()
 
 # remove rare and common words
 def removeRareCommonWords():
@@ -60,7 +64,7 @@ def removeRareCommonWords():
 def isNotLimit(num, rareLimit, commonLimit):
     return num > rareLimit and num < commonLimit
 
-finalTrainingData = removeRareCommonWords()
+#finalTrainingData = removeRareCommonWords()
 
 # calculate tf and idf
 
@@ -68,16 +72,21 @@ documentDict = {}
 wordIndexDict = {}
 
 def addWeight():
-    for data in finalTrainingData:
+    countIndex = 0 
+    for data in trainData:
+        countIndex += 1
         datas = data.split()
         documentId = datas[0]
         wordIndex = datas[1]
         count = datas[2]
         if documentId not in documentDict.keys():
-            documentDict[documentId] = {wordIndex, count}
-        else:
-            documentDict[documentId].add({wordIndex, count})
-       # print datas
+            documentDict[documentId] = 0
+        documentDict[documentId] += int(count)
+        if wordIndex not in wordIndexDict.keys():
+            wordIndexDict[wordIndex] = []
+        wordIndexDict[wordIndex].append(documentId)
+        if countIndex == 10000:
+            break
 
 def calculateWeight(tf, idf):
     return tf * idf
@@ -88,10 +97,24 @@ def calculateIdf(containsCount, totalCount):
 def calculateTf(appearCount, totalAppear):
     return appearCount / totalAppear
 
+def calculate():
+    countIndex = 0
+    for data in trainData:
+        datas = data.split()
+        documentId = datas[0]
+        wordIndex = datas[1]
+        count = datas[2]
+        documentContain = documentDict.get(documentId) 
+        print "tf: ", float(count) / float(documentContain)
+        wordIndexAppear = len(set(wordIndexDict[wordIndex]))
+        if wordIndexAppear == 0 :
+            continue
+        print "idf: ", math.log10(len(documentDict) / wordIndexAppear)
+        countIndex += 1
+        if countIndex == 10000:
+            break
+
 addWeight()
+calculate()
 
-print documentDict
-
-print len(cleanedTrainData)
-print len(finalTrainingData)
 
