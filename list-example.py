@@ -11,7 +11,7 @@ print
 
 print "range:", range(len(nums))
 
-nums.sort()
+# nums.sort()
 print nums
 
 for x in range(len(nums)):
@@ -20,3 +20,25 @@ for x in range(len(nums)):
 print dir(nums)
 
 print nums[-1]
+
+# this is amazing, the position of 10 in the list
+print nums.index(10)
+
+nums.append(4)
+
+print nums
+
+print nums.pop(1)
+
+print nums
+
+print nums.pop()
+
+print nums
+
+print nums.count(2)
+nums.append(2)
+print nums.count(2)
+
+# I really like python now! list method:
+# 'append', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'

@@ -2,8 +2,6 @@ dictionary = {"apple": 1, "banana": 10, "melon": 4}
 
 print dictionary
 
-print dir(dictionary)
-
 print dictionary.get("car")
 
 print dictionary.get("car", 0)
@@ -32,3 +30,5 @@ print dictionary
 # This is amazing method, I become really like python
 for k,v in dictionary.items():
     print k, v
+
+print dir(dictionary)
