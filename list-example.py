@@ -18,3 +18,5 @@ for x in range(len(nums)):
     print "index:", x, "; num:", nums[x]
 
 print dir(nums)
+
+print nums[-1]
