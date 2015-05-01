@@ -30,7 +30,7 @@ def complex_as_point():
     plt.ylim(-5, 5)
     plt.grid(True)
     plt.show()
-
+complex_as_point()
 # --- Example Three: Complex numbers As arrows ---
 def complex_as_arrow():
     z = -6 + 5j
