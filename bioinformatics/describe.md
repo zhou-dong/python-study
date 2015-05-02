@@ -12,6 +12,8 @@ Our project is going to  find the common ancestor from descendant to help scient
 
 2. Use Dynamic Programming to find the different of sequence Alignment 
 
+3. Check the result
+
 ## Data
 
 Dataset: http://hgdownload.soe.ucsc.edu/goldenPath/eboVir3/ebolaAbSequences.fasta
