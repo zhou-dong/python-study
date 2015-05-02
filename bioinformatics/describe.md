@@ -1,4 +1,4 @@
-# Analyze fasta data of Ebola
+# Find Ebola Ancestor from fasta
 
 ## Description
 
@@ -63,5 +63,3 @@ Install [Biopytho](http://biopython.org/wiki/Download)
     python setup.py build
     python setup.py test
     sudo python setup.py install
-
-
