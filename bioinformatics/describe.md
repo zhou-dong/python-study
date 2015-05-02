@@ -1,6 +1,6 @@
 # Analyze fasta data of Ebola
 
-## Data: 
+## Data
 
 Dataset: http://hgdownload.soe.ucsc.edu/goldenPath/eboVir3/ebolaAbSequences.fasta
 
@@ -14,11 +14,11 @@ Data Format: Fasta
     ASSTKVDKKIEP
 ```
 
-## Development Lauguage:
+## Development Lauguage
 
 - Language: python
 
-## Algorithm:
+## Algorithm
 
 - FP-growth
 - Dynamic programming
