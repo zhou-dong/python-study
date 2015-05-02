@@ -25,7 +25,7 @@ Data Format: Fasta
 
 ## Algorithm
 
-- FP-growth
+- FP-Growth
 - Dynamic programming
 
 
@@ -35,4 +35,14 @@ Data Format: Fasta
 - python-fp-growth
 - matplotlib
 
+### Install FP-growth:
 
+    git clone https://github.com/enaeseth/python-fp-growth.git
+    cd python-fp-growth
+    python setup.py install
+    or 
+    sudo python setup.py install
+
+### Test FP-Growth
+
+    python -m fp_growth -s 4 examples/tsk.csv
