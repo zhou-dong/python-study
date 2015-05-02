@@ -29,4 +29,10 @@ Data Format: Fasta
 - Dynamic programming
 
 
+## Python Package:
+
+- Biopython
+- python-fp-growth
+- matplotlib
+
 
