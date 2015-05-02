@@ -46,3 +46,13 @@ Data Format: Fasta
 ### Test FP-Growth
 
     python -m fp_growth -s 4 examples/tsk.csv
+    
+### Install Biopython
+
+Download Url: http://biopython.org/wiki/Download
+
+    python setup.py build
+    python setup.py test
+    sudo python setup.py install
+
+
