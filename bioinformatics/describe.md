@@ -3,8 +3,6 @@
 ## Description
 
 
-
-
 ## Data
 
 Dataset: http://hgdownload.soe.ucsc.edu/goldenPath/eboVir3/ebolaAbSequences.fasta
@@ -35,7 +33,9 @@ Data Format: Fasta
 - python-fp-growth
 - matplotlib
 
-### Install FP-growth:
+## Install Package
+
+### FP-growth:
 
     git clone https://github.com/enaeseth/python-fp-growth.git
     cd python-fp-growth
@@ -46,7 +46,7 @@ Data Format: Fasta
 ### Test FP-Growth
 
     python -m fp_growth -s 4 examples/tsk.csv
-    
+
 ### Install Biopython
 
 Download Url: http://biopython.org/wiki/Download
