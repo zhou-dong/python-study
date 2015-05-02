@@ -17,17 +17,18 @@ Data Format: Fasta
     ASSTKVDKKIEP
 ```
 
-## Development Lauguage
+## Development Information
 
-- Language: python
+Language
 
-## Algorithm
+- python
+
+Algorithm
 
 - FP-Growth
 - Dynamic programming
 
-
-## Python Package:
+Python Package:
 
 - Biopython
 - python-fp-growth
@@ -35,20 +36,18 @@ Data Format: Fasta
 
 ## Install Package
 
-### FP-growth:
+FP-growth:
 
     git clone https://github.com/enaeseth/python-fp-growth.git
     cd python-fp-growth
     python setup.py install
     sudo python setup.py install
 
-### Test FP-Growth
+Test FP-Growth
 
     python -m fp_growth -s 4 examples/tsk.csv
 
-### Install Biopython
-
-Download Url: http://biopython.org/wiki/Download
+Install [Biopytho](http://biopython.org/wiki/Download)
 
     python setup.py build
     python setup.py test
