@@ -40,7 +40,6 @@ Data Format: Fasta
     git clone https://github.com/enaeseth/python-fp-growth.git
     cd python-fp-growth
     python setup.py install
-    or 
     sudo python setup.py install
 
 ### Test FP-Growth
