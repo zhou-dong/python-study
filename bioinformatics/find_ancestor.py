@@ -7,14 +7,35 @@ from operator import itemgetter, attrgetter, methodcaller
 from fp_growth import find_frequent_itemsets
 import matplotlib.pyplot as plt
 
-# Fatch sequence from ebola.fasta file
-datas = {}
 input_file = "./ebola.fasta"
-fasta_sequences = SeqIO.parse(open(input_file),'fasta')
-for fasta in fasta_sequences:
-    name, sequence = fasta.id, str(fasta.seq)
-    datas[name] = sequence
-fasta_sequences.close()
+
+def fetch_fasta_dict(file_path = input_file):
+    print "begin to load fasta file"
+    result = {}
+    fasta_sequences = SeqIO.parse(open(file_path),'fasta')
+    for fasta in fasta_sequences:
+        name, sequence = fasta.id, str(fasta.seq)
+        seq_len = len(sequence)
+        if seq_len > 500 or seq_len < 150:
+            continue
+        result[name] = sequence
+    fasta_sequences.close()
+    print "load file finish"
+    return result
+
+def fetch_fasta_list(file_path = input_file):
+    print "begin to load file"
+    result = []
+    fasta_sequences = SeqIO.parse(open(file_path),'fasta')
+    for fasta in fasta_sequences:
+        name, sequence = fasta.id, str(fasta.seq)
+        seq_len = len(sequence)
+        if seq_len > 500 or seq_len < 150:
+            continue
+        result.append(sequence)
+    fasta_sequences.close()
+    print "load file finish"
+    return result
 
 # use dynamic programming to alignment two sequence
 def alignment(a, b):
@@ -35,11 +56,18 @@ def calculate_different(dicts):
         print result[key]
     return result
 
-cal_dif = calculate_different(datas)
+def show_alignment():
+    data = fetch_fasta_list()
+    result = alignment(data[0], data[1])
+    for x in result:
+        print x
 
-plt.plot(cal_dif.values(), 'ro')
-plt.axis([0, 42, 0, 1])
-plt.show()
-
+#print alignment(datas[0], datas[1])
+#cal_dif = calculate_different(datas)
+#plt.plot(cal_dif.values(), 'ro')
+#plt.axis([0, 42, 0, 1])
+#plt.show()
 #print format_alignment(*r)
 #print format_alignment(*r1)
+
+show_alignment();
