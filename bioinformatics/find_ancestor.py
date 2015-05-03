@@ -61,6 +61,8 @@ def show_alignment():
     result = alignment(data[0], data[1])
     for x in result:
         print x
+    comm = common(result[0], result[1])
+    print "".join(comm)
 
 #print alignment(datas[0], datas[1])
 #cal_dif = calculate_different(datas)
