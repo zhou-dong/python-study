@@ -1,6 +1,6 @@
 # Machine Learning in Action 
 
-Machine Learning的分类方式有很多中，可以按照是否有监督分类两类：
+Machine Learning的分类方式有很多中，可以按照是否有监督分成两类：
 
 1. 有监督学习
     - KNN（k nearest neighbour）
