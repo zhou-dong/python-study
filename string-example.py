@@ -4,6 +4,10 @@ first_name = "dong"
 last_name = "zhou"
 full_name  = first_name + " " +  last_name
 
+print full_name[::-1]
+
+print full_name[::2]
+
 print "Hello World!"
 
 print "first name: " + first_name
