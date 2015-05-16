@@ -42,3 +42,10 @@ print nums.count(2)
 
 # I really like python now! list method:
 # 'append', 'count', 'extend', 'index', 'insert', 'pop', 'remove', 'reverse', 'sort'
+
+# get index and value of list in same time
+choices = ['pizza', 'pasta', 'salad', 'nachos']
+print 'Your choices are:'
+for index, item in enumerate(choices):
+    print index+1, item
+
