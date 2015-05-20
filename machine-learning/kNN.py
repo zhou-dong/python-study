@@ -20,8 +20,20 @@ def createDataset():
     labels = ['A', 'A', 'B', 'B']
     return group, labels
 
+def calculateDistance(vector, matrix):
+    matrix_size = matrix.shape[0]
+    new_matrix = tile(vector, (matrix_size,1))
+    different_matrix = new_matrix - matrix
+    square_matrix = different_matrix ** 2
+    square_distances = square_matrix.sum(axis=1)
+    return square_distances ** 0.5
+
+def classify(vector, dataset, labels, k):
+    distances = calculateDistance(vector, dataset)
+    print distances
+
 group, labels = createDataset()
+print calculateDistance([0,1], group)
 
-print group
 
-print labels
+classify([0,1], group, labels, 2)
