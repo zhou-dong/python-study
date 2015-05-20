@@ -35,7 +35,8 @@ def classify(distances, labels, k):
         index = sort_index[x]
         label = labels[index]
         class_count[label] = class_count.get(label,0) + 1
-    sorted_class_count =sorted(class_count.iteritems(), key=operator.itemgetter(1), reverse=True)
+    sorted_class_count =sorted(class_count.iteritems(), 
+            key=operator.itemgetter(1), reverse=True)
     return sorted_class_count[0][0]
 
 def execute(vector, dataset, labels, k):
