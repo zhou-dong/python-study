@@ -28,12 +28,19 @@ def calculateDistance(vector, matrix):
     square_distances = square_matrix.sum(axis=1)
     return square_distances ** 0.5
 
-def classify(vector, dataset, labels, k):
+def classify(distances, labels, k):
+    sort_index = distances.argsort()
+    class_count = {}
+    for x in range(k):
+        index = sort_index[x]
+        label = labels[index]
+        class_count[label] = class_count.get(label,0) + 1
+    sorted_class_count =sorted(class_count.iteritems(), key=operator.itemgetter(1), reverse=True)
+    return sorted_class_count[0][0]
+
+def execute(vector, dataset, labels, k):
     distances = calculateDistance(vector, dataset)
-    print distances
+    print classify(distances, labels, k)
 
 group, labels = createDataset()
-print calculateDistance([0,1], group)
-
-
-classify([0,1], group, labels, 2)
+execute([1,1], group, labels, 3)
