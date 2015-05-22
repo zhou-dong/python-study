@@ -76,7 +76,17 @@ def calculate_nagative_weight(test_sentence):
         result = result * p
     return result
 
-test_sentence = 'my dog is so cute'
-test_sentence = 'stop your worthless dog'
-print calculate_positive_weight(test_sentence)
-print calculate_nagative_weight(test_sentence)
+def execute(test_sentence):
+    print test_sentence,
+    positive_score = calculate_positive_weight(test_sentence)
+    negative_score = calculate_nagative_weight(test_sentence)
+    print positive_score, negative_score,
+    if positive_score > negative_score:
+        print "positive"
+    elif positive_score < negative_score:
+        print "negative"
+    else:
+        print "sorry we do not know"
+
+execute('my dog is so cute')
+execute('stop your worthless dog')
