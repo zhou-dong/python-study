@@ -4,7 +4,6 @@ naive bayes
 p(a,b) = p(a) * p(b|a)
        = p(b) * p(a|b)
 
-
 p(c,(x,y)) = p(x,y) * p(c|x,y)
            = p(c) * p(x,y|c)
 
