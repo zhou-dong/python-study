@@ -55,6 +55,7 @@ max_contour = contour_info[0]
 holes = np.zeros(gray_img.shape, np.uint8)
 cv2.drawContours(holes, max_contour, 0, 255, -1)
 cv2.imshow("Holes", holes)
+cv2.imwrite('holes.png',holes)
 
 mask = cv2.GaussianBlur(holes, (15, 15), 0)
 mask = np.dstack([mask] * 3)  # Create 3-channel alpha mask
@@ -65,4 +66,10 @@ masked = (mask * img) + ((1 - mask) * (0,0,1))  # Blend
 masked = (masked * 255).astype('uint8')
 
 cv2.imshow("Maked", masked)
-cv2.waitKey()
+cv2.imwrite('masked.png',masked)
+
+
+# cv2.waitKey()
+
+cv2.waitKey(0)
+cv2.destroyAllWindows()
