@@ -1,7 +1,8 @@
 import numpy as np
 import cv2
 
-path = "/Users/dongdong/Desktop/3.jpg"
+#path = "/Users/dongdong/Desktop/3.jpg"
+path = "/Users/dongdong/Desktop/5.jpg"
 
 im = cv2.imread(path)
 
