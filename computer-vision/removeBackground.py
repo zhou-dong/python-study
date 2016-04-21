@@ -22,6 +22,7 @@ def sharp(image, level=3):
     return f
 
 path = "/Users/dongdong/Desktop/33.jpg"
+
 original_image = cv2.imread(path)
 # 1 Convert to gray & Normalize
 gray_img = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
@@ -66,8 +67,6 @@ masked = (mask * img) + ((1 - mask) * (0,0,1))  # Blend
 masked = (masked * 255).astype('uint8')
 
 cv2.imshow("Maked", masked)
-cv2.imwrite('masked.png',masked)
-
 
 # cv2.waitKey()
 
