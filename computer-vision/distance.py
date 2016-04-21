@@ -4,16 +4,38 @@ import cv2
 #path = "holes.png"
 path = "contours.png"
 
-m = np.array(cv2.imread(path))
+source = cv2.imread(path)
+im = np.copy(source)
 
-print m.shape
-
-x = len(m[:,1])
-y = len(m[1,:])
-
-row1 = m[3,:]
-for pix in row1:
-    print pix
+x = len(im[:,1])
+y = len(im[1,:])
 
 
-print m[1:1]
+def leftMost(line):
+    for index, pix in enumerate(line):
+        if pix[1]==255:
+            return index
+    return -1 ;
+
+def rightMost(line):
+    index = y-1
+    for pix in reversed(line):
+        if pix[1] == 255:
+            return index
+        index -= 1
+    return -1 ;
+
+def iteratorLine():
+    global im
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    for index, line in enumerate(im):
+        margin = rightMost(line) - leftMost(line)
+        cv2.line(im,(0,index),(y,index),(255,255,0),2)
+        cv2.putText(im, str(margin),(100,index), font, 1,(255,255,255),2)
+        cv2.imshow("Holes", im)
+        cv2.waitKey(1)
+        im = np.copy(source)
+
+cv2.destroyAllWindows()
+
+iteratorLine()

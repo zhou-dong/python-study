@@ -8,7 +8,7 @@ def get_contrasted(image, type="dark", level=3):
 
     if type == "light":
         newImage0 = (maxIntensity/phi)*(image/(maxIntensity/theta))**0.5
-        newImage0 = array(newImage0,dtype=uint8)
+        newImage0 = np.array(newImage0,dtype='uint8')
         return newImage0
     elif type == "dark":
         newImage1 = (maxIntensity/phi)*(image/(maxIntensity/theta))**level
