@@ -2,7 +2,7 @@ import numpy as np
 import cv2
 
 #path = "holes.png"
-path = "contours.png"
+path = "./img/contours.png"
 
 source = cv2.imread(path)
 im = np.copy(source)
@@ -34,14 +34,14 @@ def iteratorLine():
     for index, line in enumerate(im):
         margin = rightMost(line) - leftMost(line)
         drawLine(line, margin, index)
+        if(margin < 10):
+            continue
         if(index > 200 and index< 500 and margin < minimum):
             minimum = margin
             minimumIndex = index
         if(index > 200 and maximum < margin):
             maximum = margin
             maximumIndex = index
-            print maximum, margin, maximumIndex
-    print maximumIndex, minimumIndex
     font = cv2.FONT_HERSHEY_SIMPLEX
     cv2.line(im,(0,minimumIndex),(len(im[1,:]),minimumIndex),(255,255,0),2)
     cv2.line(im,(0,maximumIndex),(len(im[1,:]),maximumIndex),(255,255,0),2)

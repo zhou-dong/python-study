@@ -3,7 +3,7 @@ import cv2
 
 #path = "/Users/dongdong/Desktop/3.jpg"
 #path = "/Users/dongdong/Desktop/5.jpg"
-path = "holes.png"
+path = "./img/holes.png"
 
 im = cv2.imread(path)
 
@@ -14,6 +14,7 @@ contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIM
 cv2.drawContours(im,contours,-1,(0,255,0),3)
 
 cv2.imshow("contours title", im)
-cv2.imwrite('contours.png',im)
-cv2.waitKey()
+cv2.imwrite('./img/contours.png',im)
 
+cv2.waitKey(15000)
+cv2.destroyAllWindows()

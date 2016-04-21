@@ -13,7 +13,6 @@ def get_contrasted(image, type="dark", level=3):
     elif type == "dark":
         newImage1 = (maxIntensity/phi)*(image/(maxIntensity/theta))**level
         newImage1 = np.array(newImage1,dtype='uint8')
-
         return newImage1
 
 def sharp(image, level=3):
@@ -21,7 +20,7 @@ def sharp(image, level=3):
     f = cv2.addWeighted(image, 1.5, f, -0.5, 0)
     return f
 
-path = "/Users/dongdong/Desktop/33.jpg"
+path = "/Users/dongdong/Desktop/5.jpg"
 
 original_image = cv2.imread(path)
 # 1 Convert to gray & Normalize
@@ -56,7 +55,7 @@ max_contour = contour_info[0]
 holes = np.zeros(gray_img.shape, np.uint8)
 cv2.drawContours(holes, max_contour, 0, 255, -1)
 cv2.imshow("Holes", holes)
-cv2.imwrite('holes.png',holes)
+cv2.imwrite('./img/holes.png',holes)
 
 mask = cv2.GaussianBlur(holes, (15, 15), 0)
 mask = np.dstack([mask] * 3)  # Create 3-channel alpha mask
@@ -70,5 +69,5 @@ cv2.imshow("Maked", masked)
 
 # cv2.waitKey()
 
-cv2.waitKey(0)
+cv2.waitKey(30000)
 cv2.destroyAllWindows()
