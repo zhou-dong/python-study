@@ -10,7 +10,6 @@ im = np.copy(source)
 x = len(im[:,1])
 y = len(im[1,:])
 
-
 def leftMost(line):
     for index, pix in enumerate(line):
         if pix[1]==255:
@@ -27,14 +26,19 @@ def rightMost(line):
 
 def iteratorLine():
     global im
-    font = cv2.FONT_HERSHEY_SIMPLEX
     for index, line in enumerate(im):
         margin = rightMost(line) - leftMost(line)
-        cv2.line(im,(0,index),(y,index),(255,255,0),2)
-        cv2.putText(im, str(margin),(100,index), font, 1,(255,255,255),2)
-        cv2.imshow("Holes", im)
-        cv2.waitKey(1)
-        im = np.copy(source)
+        drawLine(line, margin, index)
+        print margin
+
+def drawLine(line, margin, index):
+    global im
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    cv2.line(im,(0,index),(y,index),(255,255,0),2)
+    cv2.putText(im, str(margin),(100,index), font, 1,(255,255,255),2)
+    cv2.imshow("Holes", im)
+    cv2.waitKey(1)
+    im = np.copy(source)
 
 cv2.destroyAllWindows()
 
