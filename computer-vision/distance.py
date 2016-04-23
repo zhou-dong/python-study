@@ -50,6 +50,9 @@ def iteratorLine():
     cv2.imshow("Holes", im)
     cv2.waitKey(20000)
 
+def drawMinMax():
+    return 9
+
 def drawLine(line, margin, index):
     global im
     font = cv2.FONT_HERSHEY_SIMPLEX
