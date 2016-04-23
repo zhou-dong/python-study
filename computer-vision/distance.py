@@ -52,7 +52,6 @@ def drawMinMax(minimumIndex, maximumIndex, minimum, maximum, im):
     cv2.putText(im, str(maximum),(100,maximumIndex), font, 1,(255,255,255),2)
     cv2.imshow("Holes", im)
     cv2.waitKey(20000)
-    return 9
 
 def drawLine(line, margin, index):
     global im
