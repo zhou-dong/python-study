@@ -42,6 +42,9 @@ def iteratorLine():
         if(index > 200 and maximum < margin):
             maximum = margin
             maximumIndex = index
+    drawMinMax(minimumIndex, maximumIndex, minimum, maximum, im)
+
+def drawMinMax(minimumIndex, maximumIndex, minimum, maximum, im):
     font = cv2.FONT_HERSHEY_SIMPLEX
     cv2.line(im,(0,minimumIndex),(len(im[1,:]),minimumIndex),(255,255,0),2)
     cv2.line(im,(0,maximumIndex),(len(im[1,:]),maximumIndex),(255,255,0),2)
@@ -49,8 +52,6 @@ def iteratorLine():
     cv2.putText(im, str(maximum),(100,maximumIndex), font, 1,(255,255,255),2)
     cv2.imshow("Holes", im)
     cv2.waitKey(20000)
-
-def drawMinMax():
     return 9
 
 def drawLine(line, margin, index):
