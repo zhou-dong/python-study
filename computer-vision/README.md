@@ -56,3 +56,4 @@ http://stackoverflow.com/questions/31133903/opencv-remove-background
 http://scikit-learn.org/stable/modules/svm.html
 https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
 http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html
+https://en.wikipedia.org/wiki/Radial_basis_function_kernel
