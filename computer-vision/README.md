@@ -6,10 +6,10 @@
 #### Original Image
 
 <img alt="keywords-data" src="image/1.jpg"/>
-<img alt="keywords-data" src="image/masked.png"/>
 
 ### Remove Background
 
+<img alt="keywords-data" src="image/masked.png"/>
 <img alt="keywords-data" src="image/gray_img.png"/>
 <img alt="keywords-data" src="image/gray.png"/>
 <img alt="keywords-data" src="image/1_noback.png"/>
