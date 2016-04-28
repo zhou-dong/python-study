@@ -5,12 +5,12 @@
 
 #### More Morphology Transformations
 
-<img style="width: 45%;" alt="keywords-data" src="image/2.jpg"/>
-<img style="width: 45%;" alt="keywords-data" src="image/2_noback.png"/>
-<img style="width: 45%;" alt="keywords-data" src="image/gray.png"/>
-<img style="width: 45%;" alt="keywords-data" src="image/gray_img.png"/>
-<img style="width: 45%;" alt="keywords-data" src="image/masked.png"/>
-
+<img alt="keywords-data" src="image/1.jpg"/>
+<img alt="keywords-data" src="image/masked.png"/>
+<img alt="keywords-data" src="image/gray_img.png"/>
+<img alt="keywords-data" src="image/gray.png"/>
+<img alt="keywords-data" src="image/1_noback.png"/>
+<img alt="keywords-data" src="image/1_noback_contour.png"/>
 
 ### References
 
