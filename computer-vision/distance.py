@@ -3,12 +3,18 @@ import cv2
 import sys
 
 path = sys.argv[1]
+grade = sys.argv[2]
 
 source = cv2.imread(path)
 im = np.copy(source)
 
 x = len(im[:,1])
 y = len(im[1,:])
+
+thread = y / 5
+score = []
+
+minimum = 10000000
 
 def leftMost(line):
     for index, pix in enumerate(line):
@@ -26,7 +32,7 @@ def rightMost(line):
 
 def iteratorLine():
     global im
-    minimum = 100000000 
+    global minimum
     maximum = 0
     temp = 0
     minimumIndex = 0
@@ -34,6 +40,9 @@ def iteratorLine():
     for index, line in enumerate(im):
         margin = rightMost(line) - leftMost(line)
         drawLine(line, margin, index)
+        if (index != 0 and index % thread == 0 ):
+            score.append(margin)
+            print margin
         if (margin < 10):
             continue
         if (index > 10 and margin < minimum):
@@ -63,6 +72,17 @@ def drawLine(line, margin, index):
 
 iteratorLine()
 
+score[:] = [x / float(minimum) for x in score]
+
+dataFile = open("data.txt", "a")
+
+for x in score:
+    dataFile.write(str(x) + " ")
+dataFile.write(grade)
+dataFile.write("\n")
+dataFile.close() 
+
+print score
 while True:
     ch = cv2.waitKey()
     if ch == 27:

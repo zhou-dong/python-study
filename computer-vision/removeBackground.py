@@ -34,6 +34,9 @@ gray_img = sharp(get_contrasted(gray_img))
 #gray_img = cv2.normalize(gray_img, None, 0, 255, NORM_MINMAX, CV_8UC1)
 cv2.imshow("Gray", gray_img)
 
+cv2.imwrite("gray_img.png", gray_img)
+
+
 # 2 Find Threshold
 gray_blur = cv2.GaussianBlur(gray_img, (7, 7), 0)
 adapt_thresh_im = cv2.adaptiveThreshold(gray_blur, 255, cv2.ADAPTIVE_THRESH_GAUSSIAN_C, cv2.THRESH_BINARY_INV, 11, 1)
@@ -45,6 +48,8 @@ gray = cv2.Canny(thresh, 88, 400, apertureSize=3)
 gray = cv2.dilate(gray, None, iterations=8)
 gray = cv2.erode(gray, None, iterations=8)
 cv2.imshow("Trheshold", gray)
+
+cv2.imwrite("gray.png", gray)
 
 # 4 Flood
 contours, _ = cv2.findContours(gray, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE)
@@ -73,6 +78,9 @@ masked = (mask * img) + ((1 - mask) * (0,0,1))  # Blend
 masked = (masked * 255).astype('uint8')
 
 cv2.imshow("Maked", masked)
+
+cv2.imwrite("masked.png", masked)
+
 #ch = cv2.waitKey(60000)
 
 while True:
