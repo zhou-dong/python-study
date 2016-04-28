@@ -37,18 +37,22 @@ Use SVM to classify the figure
 
 <img alt="keywords-data" src="image/svm.png"/>
 
-Linear SVM classify
+SVM Linear kernel
 
 <img alt="keywords-data" src="image/svm2.png"/>
+
+SVM RBF kernel
+
+<img alt="keywords-data" src="image/svm3.png"/>
+
+SVM poly kernel
+
+<img alt="keywords-data" src="image/svm4.png"/>
 
 ### References
 
 http://docs.opencv.org/2.4/doc/tutorials/imgproc/opening_closing_hats/opening_closing_hats.html
-
 http://stackoverflow.com/questions/31133903/opencv-remove-background
-
 http://scikit-learn.org/stable/modules/svm.html
-
 https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
-
 http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html
