@@ -1,7 +1,7 @@
 # Score the human figure
 
 - openCV
-- machine learning method
+- SVM
 
 #### Original Image
 
@@ -31,10 +31,20 @@
 | 4.44444444444 | 9.66666666667 | 13.8888888889 | 15.1111111111 | 12.6666666667 | 10.6111111111 | c |
 | 8.8 | 10.2666666667 |10.0666666667 | 6.66666666667 | 6.66666666667 | 6.33333333333 | c |
 
+### Classify the result
+
+Use SVM to classify the figure
+
+<img alt="keywords-data" src="image/svm.png"/>
+
 ### References
 
 http://docs.opencv.org/2.4/doc/tutorials/imgproc/opening_closing_hats/opening_closing_hats.html
 
 http://stackoverflow.com/questions/31133903/opencv-remove-background
 
+http://scikit-learn.org/stable/modules/svm.html
 
+https://docs.scipy.org/doc/numpy-dev/user/quickstart.html
+
+http://scikit-learn.org/stable/auto_examples/svm/plot_iris.html
