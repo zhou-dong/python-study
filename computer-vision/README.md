@@ -3,14 +3,24 @@
 - openCV
 - machine learning method
 
-#### More Morphology Transformations
+#### Original Image
 
 <img alt="keywords-data" src="image/1.jpg"/>
 <img alt="keywords-data" src="image/masked.png"/>
+
+### Remove Background
+
 <img alt="keywords-data" src="image/gray_img.png"/>
 <img alt="keywords-data" src="image/gray.png"/>
 <img alt="keywords-data" src="image/1_noback.png"/>
+
+### Contour the Image
+
 <img alt="keywords-data" src="image/1_noback_contour.png"/>
+
+### Calculate the Score of Object
+
+<img alt="keywords-data" src="image/distance_image.png"/>
 
 ### References
 
