@@ -17,6 +17,7 @@
 ### Contour the Image
 
 <img alt="keywords-data" src="image/1_noback_contour.png"/>
+<img alt="keywords-data" src="image/fat.png"/>
 
 ### Calculate the Score of Object
 

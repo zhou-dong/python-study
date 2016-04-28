@@ -5,7 +5,7 @@ import numpy as np
 C = 1.0
 clf = svm.SVC(kernel='poly', degree=3, C=C)
 
-f = open ('datas.txt' , 'r')
+f = open ('../datas.txt' , 'r')
 temp = [ map(float,line.split(' ')) for line in f ]
 
 m = np.matrix(temp)

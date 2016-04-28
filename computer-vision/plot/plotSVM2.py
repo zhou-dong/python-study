@@ -3,9 +3,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 C = 1.0
-clf = svm.SVC(kernel='rbf', gamma=0.7, C=C)
+clf = svm.SVC(kernel='linear', C=C)
 
-f = open ('datas.txt' , 'r')
+f = open ('../datas.txt' , 'r')
 temp = [ map(float,line.split(' ')) for line in f ]
 
 m = np.matrix(temp)
@@ -41,7 +41,7 @@ plt.xlim(xx.min(), xx.max())
 plt.ylim(yy.min(), yy.max())
 plt.xticks(())
 plt.yticks(())
-plt.title("SVM Classify rbf kernel")
+plt.title("SVM Classify")
 
 plt.show()
 

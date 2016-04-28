@@ -2,10 +2,9 @@ from sklearn import svm
 import matplotlib.pyplot as plt
 import numpy as np
 
-C = 1.0
-clf = svm.SVC(kernel='linear', C=C)
+clf = svm.SVC()
 
-f = open ('datas.txt' , 'r')
+f = open ('../datas.txt' , 'r')
 temp = [ map(float,line.split(' ')) for line in f ]
 
 m = np.matrix(temp)
