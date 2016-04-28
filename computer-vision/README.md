@@ -37,6 +37,10 @@ Use SVM to classify the figure
 
 <img alt="keywords-data" src="image/svm.png"/>
 
+Linear SVM classify
+
+<img alt="keywords-data" src="image/svm2.png"/>
+
 ### References
 
 http://docs.opencv.org/2.4/doc/tutorials/imgproc/opening_closing_hats/opening_closing_hats.html
