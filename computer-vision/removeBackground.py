@@ -21,13 +21,10 @@ def sharp(image, level=3):
     f = cv2.addWeighted(image, 1.5, f, -0.5, 0)
     return f
 
-fileName = sys.argv[1]
-imageName = fileName.split(".")[0]
-
-path = "./img/source/" + fileName
+path = sys.argv[1]
+imageName = path.split(".")[1]
 
 print path
-print fileName
 print imageName
 
 original_image = cv2.imread(path)
@@ -64,7 +61,7 @@ holes = np.zeros(gray_img.shape, np.uint8)
 cv2.drawContours(holes, max_contour, 0, 255, -1)
 cv2.imshow("Holes", holes)
 
-nameNoBack = "./img/" + imageName + "_noback.png"
+nameNoBack = "." + imageName + "_noback.png"
 cv2.imwrite(nameNoBack, holes)
 
 mask = cv2.GaussianBlur(holes, (15, 15), 0)

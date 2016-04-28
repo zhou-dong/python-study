@@ -1,8 +1,8 @@
 import numpy as np
 import cv2
+import sys
 
-#path = "holes.png"
-path = "./img/contours.png"
+path = sys.argv[1]
 
 source = cv2.imread(path)
 im = np.copy(source)
@@ -34,12 +34,12 @@ def iteratorLine():
     for index, line in enumerate(im):
         margin = rightMost(line) - leftMost(line)
         drawLine(line, margin, index)
-        if(margin < 10):
+        if (margin < 10):
             continue
-        if(index > 200 and index< 500 and margin < minimum):
+        if (index > 10 and margin < minimum):
             minimum = margin
             minimumIndex = index
-        if(index > 200 and maximum < margin):
+        if (index > 10 and maximum < margin):
             maximum = margin
             maximumIndex = index
     drawMinMax(minimumIndex, maximumIndex, minimum, maximum, im)
@@ -48,10 +48,9 @@ def drawMinMax(minimumIndex, maximumIndex, minimum, maximum, im):
     font = cv2.FONT_HERSHEY_SIMPLEX
     cv2.line(im,(0,minimumIndex),(len(im[1,:]),minimumIndex),(255,255,0),2)
     cv2.line(im,(0,maximumIndex),(len(im[1,:]),maximumIndex),(255,255,0),2)
-    cv2.putText(im, str(minimum),(100,minimumIndex), font, 1,(255,255,255),2)
-    cv2.putText(im, str(maximum),(100,maximumIndex), font, 1,(255,255,255),2)
+    cv2.putText(im, str(minimum),(10,minimumIndex), font, 1,(255,255,255),2)
+    cv2.putText(im, str(maximum),(10,maximumIndex), font, 1,(255,255,255),2)
     cv2.imshow("Holes", im)
-    cv2.waitKey(20000)
 
 def drawLine(line, margin, index):
     global im
@@ -62,6 +61,11 @@ def drawLine(line, margin, index):
     cv2.waitKey(1)
     im = np.copy(source)
 
+iteratorLine()
+
+while True:
+    ch = cv2.waitKey()
+    if ch == 27:
+        break
 cv2.destroyAllWindows()
 
-iteratorLine()

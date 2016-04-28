@@ -3,10 +3,17 @@ import cv2
 import sys
 
 fileName = sys.argv[1]
-imageName = fileName.split(".")[0]
+
+if len(fileName.split(".")) == 3:
+    imageName = fileName.split(".")[1]
+else:
+    imageName = fileName.split(".")[0]
+
 path = fileName
 
 print path
+print imageName
+
 im = cv2.imread(path)
 
 print im.shape #check if the image is loaded correctly
@@ -15,7 +22,7 @@ ret,thresh = cv2.threshold(imgray,127,255,0)
 contours, hierarchy = cv2.findContours(thresh,cv2.RETR_TREE,cv2.CHAIN_APPROX_SIMPLE)
 cv2.drawContours(im,contours,-1,(0,255,0),3)
 
-nameContour =  imageName + "_contour.png"
+nameContour = "." + imageName + "_contour.png"
 cv2.imshow("contours title", im)
 cv2.imwrite(nameContour,im)
 
