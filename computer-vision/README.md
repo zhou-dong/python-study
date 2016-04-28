@@ -17,7 +17,6 @@
 ### Contour the Image
 
 <img alt="keywords-data" src="image/1_noback_contour.png"/>
-<img alt="keywords-data" src="image/fat.png"/>
 
 ### Calculate the Score of Object
 
@@ -31,6 +30,8 @@
 | 3.61111111111 | 9.66666666667 | 8.27777777778 | 4.94444444444 | 3.77777777778 | 1.72222222222 | a |
 | 4.44444444444 | 9.66666666667 | 13.8888888889 | 15.1111111111 | 12.6666666667 | 10.6111111111 | c |
 | 8.8 | 10.2666666667 |10.0666666667 | 6.66666666667 | 6.66666666667 | 6.33333333333 | c |
+
+<img alt="keywords-data" src="image/fat.png"/>
 
 ### Classify the result
 
